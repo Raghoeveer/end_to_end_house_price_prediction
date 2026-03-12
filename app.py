@@ -9,8 +9,8 @@ from pathlib import Path
 # Config
 # ============================
 API_URL = os.environ.get("API_URL", "http://127.0.0.1:8000/predict")
-S3_BUCKET = os.getenv("S3_BUCKET", "housing-regression-data")
-REGION = os.getenv("AWS_REGION", "eu-west-2")
+S3_BUCKET = os.getenv("S3_BUCKET", "housing-regression-data-raghu0508")
+REGION = os.getenv("AWS_REGION", "ap-south-1")
 
 s3 = boto3.client("s3", region_name=REGION)
 
@@ -26,11 +26,11 @@ def load_from_s3(key, local_path):
 # Paths (ensure available locally by fetching from S3 if missing)
 HOLDOUT_ENGINEERED_PATH = load_from_s3(
     "processed/feature_engineered_holdout.csv",
-    "data/processed/feature_engineered_holdout.csv"
+    "Data/processed/feature_engineered_holdout.csv"
 )
 HOLDOUT_META_PATH = load_from_s3(
     "processed/cleaning_holdout.csv",
-    "data/processed/cleaning_holdout.csv"
+    "Data/processed/cleaning_holdout.csv"
 )
 
 # ============================

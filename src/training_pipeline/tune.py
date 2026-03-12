@@ -20,8 +20,8 @@ from xgboost import XGBRegressor
 import mlflow
 import mlflow.xgboost
 
-DEFAULT_TRAIN = Path("data/processed/feature_engineered_train.csv")
-DEFAULT_EVAL = Path("data/processed/feature_engineered_eval.csv")
+DEFAULT_TRAIN = Path("Data/processed/feature_engineered_train.csv")
+DEFAULT_EVAL = Path("Data/processed/feature_engineered_eval.csv")
 DEFAULT_OUT = Path("models/xgb_best_model.pkl")
 
 

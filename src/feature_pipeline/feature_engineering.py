@@ -12,7 +12,7 @@ import pandas as pd
 from category_encoders import TargetEncoder
 from joblib import dump #joblib.dump saves encoders/mappings to disk (important for reusing at inference).
 
-PROCESSED_DIR = Path("data/processed")
+PROCESSED_DIR = Path("Data/train.csv")
 MODELS_DIR = Path("models")
 MODELS_DIR.mkdir(parents=True, exist_ok=True)
 

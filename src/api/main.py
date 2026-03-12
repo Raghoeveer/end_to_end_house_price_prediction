@@ -13,8 +13,8 @@ from src.inference_pipeline.inference import predict
 # ----------------------------
 # Config
 # ----------------------------
-S3_BUCKET = os.getenv("S3_BUCKET", "housing-regression-data")
-REGION = os.getenv("AWS_REGION", "eu-west-2")
+S3_BUCKET = os.getenv("S3_BUCKET", "housing-regression-data-raghu0508")
+REGION = os.getenv("AWS_REGION", "ap-south-1")
 s3 = boto3.client("s3", region_name=REGION)
 
 # Ensures your app always has the latest model/data locally, 
@@ -33,7 +33,7 @@ def load_from_s3(key, local_path):
 # ----------------------------
 # Downloads model + training features from S3 if not cached.
 MODEL_PATH = Path(load_from_s3("models/xgb_best_model.pkl", "models/xgb_best_model.pkl"))
-TRAIN_FE_PATH = Path(load_from_s3("processed/feature_engineered_train.csv", "data/processed/feature_engineered_train.csv"))
+TRAIN_FE_PATH = Path(load_from_s3("processed/feature_engineered_train.csv", "Data/processed/feature_engineered_train.csv"))
 
 # Load expected training features for alignment
 if TRAIN_FE_PATH.exists():

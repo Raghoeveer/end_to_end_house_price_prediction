@@ -87,7 +87,7 @@ if st.button("Show Predictions 🚀"):
     else:
         st.write(f"📅 Running predictions for **{year}-{month:02d}** | Region: **{region}**")
 
-        payload = fe_df.loc[idx].to_dict(orient="records")
+        payload = pd.read_csv(HOLDOUT_META_PATH).loc[idx].to_dict(orient="records")
 
         try:
             resp = requests.post(API_URL, json=payload, timeout=60)
